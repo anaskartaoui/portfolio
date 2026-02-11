@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Github, Linkedin, Mail, Moon, Sun, ArrowUp, Send } from 'lucide-react';
 
+import enigma from './assets/images/enigma.jpg'
+import foot from './assets/images/foot.jpg'
+import profile from './assets/images/profile.jpg'
+import school from './assets/images/school.jpg'
+
 // ============================================================================
 // HOOKS & UTILITIES
 // ============================================================================
@@ -395,7 +400,7 @@ const Portfolio = () => {
                   style={{ zIndex: 4 }}
                 >
                   <img 
-                    src="public/images/foot.jpg" 
+                    src={foot} 
                     alt="Photo 1" 
                     className="w-full h-56 object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
@@ -415,7 +420,7 @@ const Portfolio = () => {
                   style={{ zIndex: 3 }}
                 >
                   <img 
-                    src="public/images/enigma.jpg" 
+                    src={enigma} 
                     alt="Photo 2" 
                     className="w-full h-52 object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
@@ -435,7 +440,7 @@ const Portfolio = () => {
                   style={{ zIndex: 2 }}
                 >
                   <img 
-                    src="public/images/profile.jpg" 
+                    src={profile} 
                     alt="Photo 3" 
                     className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
@@ -455,7 +460,7 @@ const Portfolio = () => {
                   style={{ zIndex: 1 }}
                 >
                   <img 
-                    src="public/images/school.jpg" 
+                    src={school} 
                     alt="Photo 4" 
                     className="w-full h-60 object-cover grayscale hover:grayscale-0 transition-all duration-500"
                     style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
