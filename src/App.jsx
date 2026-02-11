@@ -270,8 +270,9 @@ const Portfolio = () => {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className={`fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-50 ${
-            darkMode ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'bg-slate-700 hover:bg-slate-800 text-white'
+            darkMode ? 'bg-slate-700 hover:bg-slate-600 text-white' : 'text-white'
           }`}
+          style={{ backgroundColor: darkMode ? '' : '#8b7355' }}
         >
           <ArrowUp size={24} />
         </button>
