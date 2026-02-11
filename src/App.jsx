@@ -70,7 +70,7 @@ const Timeline = ({ events, darkMode }) => (
               }}
             >
               <div className="flex items-start justify-between mb-2">
-                <h3 className="font-bold text-lg">{event.title}</h3>
+                <h3 className="font-bold text-xl">{event.title}</h3>
                 <span 
                   className={`text-sm px-2 py-1 rounded ${
                     darkMode ? 'bg-slate-600/20 text-slate-500' : 'text-gray-800'
@@ -81,7 +81,7 @@ const Timeline = ({ events, darkMode }) => (
                 </span>
               </div>
               <p className={`text-sm mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{event.location}</p>
-              <p className={darkMode ? 'text-gray-300' : 'text-gray-700'}>{event.description}</p>
+              <p className={`text-lg ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{event.description}</p>
             </div>
           </div>
         </FadeIn>
@@ -92,7 +92,7 @@ const Timeline = ({ events, darkMode }) => (
 
 const SEOHead = () => {
   useEffect(() => {
-    document.title = "Anas KARTAOUI - AI & Cybersecurity Student";
+    document.title = "Anas KARTAOUI Website";
   }, []);
   return null;
 };
@@ -359,16 +359,16 @@ const Portfolio = () => {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-5xl mx-auto px-6 pt-24 pb-16">
+      <main className="max-w-5xl mx-auto px-6 pt-24 pb-16 min-h-screen">
         
         {/* About */}
         {activeSection === 'about' && (
           <div className="space-y-10">
             <FadeIn>
               <div>
-                <h2 className="text-3xl font-bold mb-2">{data.name}</h2>
-                <p className={`text-lg mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{data.title}</p>
-                <p className={`text-base ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>{data.school}</p>
+                <h2 className="text-4xl font-bold mb-2">{data.name}</h2>
+                <p className={`text-xl mb-1 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{data.title}</p>
+                <p className={`text-lg ${darkMode ? 'text-gray-500' : 'text-gray-500'}`}>{data.school}</p>
               </div>
             </FadeIn>
             
@@ -380,7 +380,92 @@ const Portfolio = () => {
                   borderLeftColor: darkMode ? '' : '#d4ccb0'
                 }}
               >
-                <p className={`text-base leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{data.bio}</p>
+                <p className={`text-lg leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{data.bio}</p>
+              </div>
+            </FadeIn>
+
+            {/* Photos Polaroid Style */}
+            <FadeIn delay={200}>
+              <div className="relative h-[500px] mt-16 mb-8">
+                {/* Photo 1 - Top Left */}
+                <div 
+                  className={`absolute top-0 left-8 w-56 p-4 shadow-xl transform -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer ${
+                    darkMode ? 'bg-gray-800' : 'bg-white'
+                  }`}
+                  style={{ zIndex: 4 }}
+                >
+                  <img 
+                    src="public/images/foot.jpg" 
+                    alt="Photo 1" 
+                    className="w-full h-56 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
+                    onMouseEnter={(e) => e.target.style.filter = 'none'}
+                    onMouseLeave={(e) => e.target.style.filter = darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)'}
+                  />
+                  <p className={`text-center mt-3 text-sm font-handwriting ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Football
+                  </p>
+                </div>
+
+                {/* Photo 2 - Top Right */}
+                <div 
+                  className={`absolute top-8 right-12 w-52 p-4 shadow-xl transform rotate-4 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer ${
+                    darkMode ? 'bg-gray-800' : 'bg-white'
+                  }`}
+                  style={{ zIndex: 3 }}
+                >
+                  <img 
+                    src="public/images/enigma.jpg" 
+                    alt="Photo 2" 
+                    className="w-full h-52 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
+                    onMouseEnter={(e) => e.target.style.filter = 'none'}
+                    onMouseLeave={(e) => e.target.style.filter = darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)'}
+                  />
+                  <p className={`text-center mt-3 text-sm font-handwriting ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Enigma Machine
+                  </p>
+                </div>
+
+                {/* Photo 3 - Bottom Left */}
+                <div 
+                  className={`absolute bottom-12 left-1/4 w-48 p-4 shadow-xl transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer ${
+                    darkMode ? 'bg-gray-800' : 'bg-white'
+                  }`}
+                  style={{ zIndex: 2 }}
+                >
+                  <img 
+                    src="public/images/profile.jpg" 
+                    alt="Photo 3" 
+                    className="w-full h-48 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
+                    onMouseEnter={(e) => e.target.style.filter = 'none'}
+                    onMouseLeave={(e) => e.target.style.filter = darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)'}
+                  />
+                  <p className={`text-center mt-3 text-sm font-handwriting ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    Anas KARTAOUI
+                  </p>
+                </div>
+
+                {/* Photo 4 - Bottom Right */}
+                <div 
+                  className={`absolute bottom-0 right-20 w-60 p-4 shadow-xl transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer ${
+                    darkMode ? 'bg-gray-800' : 'bg-white'
+                  }`}
+                  style={{ zIndex: 1 }}
+                >
+                  <img 
+                    src="public/images/school.jpg" 
+                    alt="Photo 4" 
+                    className="w-full h-60 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    style={{ filter: darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)' }}
+                    onMouseEnter={(e) => e.target.style.filter = 'none'}
+                    onMouseLeave={(e) => e.target.style.filter = darkMode ? 'grayscale(70%) sepia(20%)' : 'grayscale(60%) sepia(30%)'}
+                  />
+                  <p className={`text-center mt-3 text-sm font-handwriting ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                    School
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -391,7 +476,7 @@ const Portfolio = () => {
           <div className="space-y-8">
             <FadeIn>
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-3xl font-bold">My Journey</h2>
+                <h2 className="text-4xl font-bold">My Journey</h2>
                 <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{data.timeline.length} milestones</p>
               </div>
             </FadeIn>
@@ -403,7 +488,7 @@ const Portfolio = () => {
         {activeSection === 'projects' && (
           <div className="space-y-6">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-8">Projects</h2>
+              <h2 className="text-4xl font-bold mb-8">Projects</h2>
             </FadeIn>
             <div className="space-y-8">
               {data.projects.map((project, idx) => (
@@ -418,14 +503,14 @@ const Portfolio = () => {
                     }}
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-lg font-bold">{project.title}</h3>
+                      <h3 className="text-xl font-bold">{project.title}</h3>
                       <a href={project.github} className={`transition-all duration-300 hover:opacity-70 ${
                         darkMode ? 'text-gray-400' : 'text-gray-600'
                       }`}>
                         <Github size={20} />
                       </a>
                     </div>
-                    <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{project.description}</p>
+                    <p className={`text-lg mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{project.description}</p>
                     <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{project.date}</p>
                   </div>
                 </FadeIn>
@@ -438,7 +523,7 @@ const Portfolio = () => {
         {activeSection === 'education' && (
           <div className="space-y-6">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-8">Education</h2>
+              <h2 className="text-4xl font-bold mb-8">Education</h2>
             </FadeIn>
             {data.educationList.map((edu, idx) => (
               <FadeIn key={idx} delay={100}>
@@ -451,11 +536,11 @@ const Portfolio = () => {
                     borderColor: darkMode ? '' : '#d4ccb0'
                   }}
                 >
-                  <h3 className="text-xl font-bold mb-2">{edu.degree}</h3>
-                  <p className={`text-lg mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{edu.school}</p>
+                  <h3 className="text-2xl font-bold mb-2">{edu.degree}</h3>
+                  <p className={`text-xl mb-1 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{edu.school}</p>
                   <p className={`mb-2 ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{edu.location}</p>
                   <p className={`text-sm mb-3 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{edu.period}</p>
-                  <p className={`font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Focus: {edu.focus}</p>
+                  <p className={`text-lg font-semibold ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>Focus: {edu.focus}</p>
                 </div>
               </FadeIn>
             ))}
@@ -466,7 +551,7 @@ const Portfolio = () => {
         {activeSection === 'contact' && (
           <div className="space-y-6">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-8">Contact</h2>
+              <h2 className="text-4xl font-bold mb-8">Contact</h2>
             </FadeIn>
             <div className="grid md:grid-cols-2 gap-6">
               <FadeIn delay={100}>
@@ -479,7 +564,7 @@ const Portfolio = () => {
                     borderColor: darkMode ? '' : '#d4ccb0'
                   }}
                 >
-                  <h3 className="text-xl font-bold mb-6">Get in Touch</h3>
+                  <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
                   <div className="space-y-4">
                     <a href={`mailto:${data.contact.email}`} className={`flex items-center gap-3 transition-all duration-300 hover:opacity-70 ${
                       darkMode ? 'text-gray-300' : 'text-gray-700'
@@ -513,7 +598,7 @@ const Portfolio = () => {
                     borderColor: darkMode ? '' : '#d4ccb0'
                   }}
                 >
-                  <h3 className="text-xl font-bold mb-6">Send a Message</h3>
+                  <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
                   <form onSubmit={handleFormSubmit} className="space-y-4">
                     <input
                       type="text"
