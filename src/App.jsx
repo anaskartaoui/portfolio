@@ -566,8 +566,15 @@ const Portfolio = () => {
                       type="submit"
                       disabled={formStatus === 'sending'}
                       className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg ${
-                        formStatus === 'sending' ? 'bg-gray-500 cursor-not-allowed' : 'bg-slate-700 hover:bg-slate-800 text-white'
+                        formStatus === 'sending' 
+                          ? 'cursor-not-allowed text-white' 
+                          : darkMode 
+                            ? 'bg-slate-700 hover:bg-slate-800 text-white'
+                            : 'text-white'
                       }`}
+                      style={{
+                        backgroundColor: formStatus === 'sending' ? '#6b7280' : (darkMode ? '' : '#8b7355')
+                      }}
                     >
                       {formStatus === 'sending' ? 'Sending...' : (
                         <>
@@ -577,7 +584,9 @@ const Portfolio = () => {
                       )}
                     </button>
                     {formStatus === 'success' && (
-                      <p className="text-slate-500 text-sm text-center">✓ Message sent successfully!</p>
+                      <p className={`text-sm text-center ${darkMode ? 'text-slate-500' : 'text-green-700'}`}>
+                        ✓ Message sent successfully!
+                      </p>
                     )}
                   </form>
                 </div>
